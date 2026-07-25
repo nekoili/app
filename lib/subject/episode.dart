@@ -28,6 +28,7 @@ import 'package:ikaros/player/player_audio_desktop.dart';
 import 'package:ikaros/player/player_audio_mobile.dart';
 import 'package:ikaros/player/player_video_desktop.dart';
 import 'package:ikaros/player/player_video_mobile.dart';
+import 'package:ikaros/reader/novel_reader.dart';
 import 'package:ikaros/reader/comic_reader.dart';
 import 'package:ikaros/utils/message_utils.dart';
 import 'package:ikaros/utils/number_utils.dart';
@@ -341,6 +342,7 @@ class _SubjectEpisodesState extends State<SubjectEpisodesPage> {
         : _buildVideoPlayer();
   }
 
+  Widget _buildNovelReaderButton() {
   Widget _buildComicReaderButton() {
     return Padding(
       padding: const EdgeInsets.all(16.0),
@@ -352,6 +354,7 @@ class _SubjectEpisodesState extends State<SubjectEpisodesPage> {
             Navigator.push(
               context,
               MaterialPageRoute(
+                builder: (_) => NovelReaderPage(
                 builder: (_) => ComicReaderPage(
                   subjectId: widget.subjectId,
                 ),
